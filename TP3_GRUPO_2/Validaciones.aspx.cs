@@ -13,5 +13,15 @@ namespace TP3_GRUPO_2
         {
 
         }
+
+        protected void btnCitySend_Click(object sender, EventArgs e)
+        {
+            if (ValCityName.IsValid)
+            {
+                var newItem = new ListItem(txtCityName.Text);
+                if (!ddlUserCity.Items.Contains(newItem))
+                    ddlUserCity.Items.Add(newItem);
+            }
+        }
     }
 }

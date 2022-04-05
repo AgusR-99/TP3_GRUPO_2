@@ -16,9 +16,10 @@
                 <div class="main-form-city__name">
                     <asp:Label ID="lblCityName" runat="server" Text="Nombre de localidad:"></asp:Label>
                     <asp:TextBox ID="txtCityName" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="ValCityName" runat="server" ControlToValidate="txtCityName" EnableClientScript="False" >[Completar campo]</asp:RequiredFieldValidator>
                 </div>
                 <div class="main-form__city-send">
-                    <asp:Button ID="btnCitySend" runat="server" Text="Guardar localidad" />
+                    <asp:Button ID="btnCitySend" runat="server" Text="Guardar localidad" OnClick="btnCitySend_Click" />
                 </div>
             </div>
             <div class="main-form-user">
