@@ -18,10 +18,12 @@ namespace TP3_GRUPO_2
         {
             if (ValCityName.IsValid)
             {
+                ValCityName.Text = "";
                 var newItem = new ListItem(txtCityName.Text);
                 if (!ddlUserCity.Items.Contains(newItem))
                     ddlUserCity.Items.Add(newItem);
             }
+            else ValCityName.Text = "Ingrese localidad";
         }
     }
 }

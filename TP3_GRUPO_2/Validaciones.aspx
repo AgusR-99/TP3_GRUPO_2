@@ -16,7 +16,7 @@
                 <div class="main-form-city__name">
                     <asp:Label ID="lblCityName" runat="server" Text="Nombre de localidad:"></asp:Label>
                     <asp:TextBox ID="txtCityName" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="ValCityName" runat="server" ControlToValidate="txtCityName" EnableClientScript="False" >[Completar campo]</asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="ValCityName" runat="server" ControlToValidate="txtCityName" EnableClientScript="False" Text=""></asp:RequiredFieldValidator>
                 </div>
                 <div class="main-form__city-send">
                     <asp:Button ID="btnCitySend" runat="server" Text="Guardar localidad" OnClick="btnCitySend_Click" />
@@ -32,11 +32,11 @@
                 </div>
                 <div class="main-form-user__password">
                     <asp:Label ID="lblUserPwd" runat="server" Text="Contraseña:"></asp:Label>
-                    <asp:TextBox ID="txtUserPwd" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtUserPwd" runat="server" Type="password"></asp:TextBox>
                 </div>
                 <div class="main-form-user__password-re">
                     <asp:Label ID="lblUserPwdRe" runat="server" Text="Repetir contraseña:"></asp:Label>
-                    <asp:TextBox ID="txtUserPwdRe" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtUserPwdRe" runat="server" Type="password"></asp:TextBox>
                 </div>
                 <div class="main-form-user__email">
                     <asp:Label ID="lblUserEmail" runat="server" Text="Correo electronico:"></asp:Label>
@@ -50,7 +50,7 @@
                     <asp:Label ID="lblUserCity" runat="server" Text="Localidades:"></asp:Label>
                     <asp:DropDownList ID="ddlUserCity" runat="server"></asp:DropDownList>
                 </div>
-                <div class="main-form__user-send">
+                <div class="main-form-use__send">
                     <asp:Button ID="btnUserSend" runat="server" Text="Guardar Usuario" />
                 </div>
             </div>
