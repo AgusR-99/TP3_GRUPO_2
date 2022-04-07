@@ -20,10 +20,20 @@ namespace TP3_GRUPO_2
             {
                 ValCityName.Text = "";
                 var newItem = new ListItem(txtCityName.Text);
-                if (!ddlUserCity.Items.Contains(newItem))
+                if (!ddlUserCity.Items.Contains(newItem)) {
                     ddlUserCity.Items.Add(newItem);
+                    txtCityName.Text = "";
+                }
+                else {
+                    cvLocalidad.Text = "Localidad repetido";
+                        }
             }
-            else ValCityName.Text = "Ingrese localidad";
+            else ValCityName.Text = "";
+        }
+
+        protected void txtUserCp_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
