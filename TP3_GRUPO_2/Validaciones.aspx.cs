@@ -11,7 +11,7 @@ namespace TP3_GRUPO_2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
 
         protected void btnCitySend_Click(object sender, EventArgs e)
@@ -34,6 +34,11 @@ namespace TP3_GRUPO_2
         protected void txtUserCp_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnRedirect_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("inicio.aspx");
         }
     }
 }

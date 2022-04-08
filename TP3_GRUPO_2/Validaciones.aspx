@@ -87,8 +87,8 @@
                     <asp:Label ID="lblUserCp" runat="server" Text="CP:"></asp:Label>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:TextBox ID="txtUserCp" runat="server" OnTextChanged="txtUserCp_TextChanged" ValidationGroup="Grupo2" MaxLength="4"></asp:TextBox>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:RequiredFieldValidator ID="rfvCP" runat="server" ControlToValidate="txtUserCp" EnableClientScript="False" ValidationGroup="Grupo2">Ingrese CP</asp:RequiredFieldValidator>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<asp:CompareValidator ID="cvCP" runat="server" ControlToValidate="txtUserCp" Operator="GreaterThan" Type="Integer" ValueToCompare="0">Ingrese un CP valido</asp:CompareValidator>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;
                 <br />
                 <br />
@@ -109,7 +109,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <br />
                 <br />
-                <asp:Button ID="btnRedirect" runat="server" Text="Ir a Inicio.aspx" ValidationGroup="Grupo3" />
+                <asp:Button ID="btnRedirect" runat="server" Text="Ir a Inicio.aspx" ValidationGroup="Grupo3" OnClick="btnRedirect_Click" />
                 <br />
                 <br />
                 <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Grupo1" />
