@@ -86,7 +86,7 @@
                 <br />
                     <asp:Label ID="lblUserCp" runat="server" Text="CP:"></asp:Label>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:TextBox ID="txtUserCp" runat="server" OnTextChanged="txtUserCp_TextChanged" ValidationGroup="Grupo2"></asp:TextBox>
+                    <asp:TextBox ID="txtUserCp" runat="server" OnTextChanged="txtUserCp_TextChanged" ValidationGroup="Grupo2" MaxLength="4"></asp:TextBox>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:RequiredFieldValidator ID="rfvCP" runat="server" ControlToValidate="txtUserCp" EnableClientScript="False" ValidationGroup="Grupo2">Ingrese CP</asp:RequiredFieldValidator>
 &nbsp;

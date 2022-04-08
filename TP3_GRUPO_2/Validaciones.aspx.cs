@@ -25,7 +25,7 @@ namespace TP3_GRUPO_2
                     txtCityName.Text = "";
                 }
                 else {
-                    cvLocalidad.Text = "Localidad repetido";
+                    cvLocalidad.Text = "Localidad repetida";
                         }
             }
             else ValCityName.Text = "";
