@@ -30,14 +30,14 @@
         }
         .auto-style7 {
             height: 61px;
-            width: 265px;
+            width: 267px;
         }
         .auto-style8 {
             height: 66px;
-            width: 265px;
+            width: 267px;
         }
         .auto-style9 {
-            width: 265px;
+            width: 267px;
         }
         .auto-style10 {
             margin-bottom: 1px;
@@ -47,7 +47,7 @@
             height: 59px;
         }
         .auto-style12 {
-            width: 265px;
+            width: 267px;
             height: 59px;
         }
         .auto-style13 {
@@ -105,7 +105,7 @@
                     <asp:TextBox ID="txtUsername" runat="server" ValidationGroup="Grupo2"></asp:TextBox>
                             </td>
                             <td class="auto-style1">
-                <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtUsername" EnableClientScript="False" ValidationGroup="Grupo2">Ingrese un nombre de usuario</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtUsername" EnableClientScript="False" ValidationGroup="Grupo2" ErrorMessage="Ingrese un nombre de usuario">*</asp:RequiredFieldValidator>
                             </td>
                         </tr>
                         <tr>
@@ -116,7 +116,7 @@
                     <asp:TextBox ID="txtUserPwd" runat="server" Type="password" ValidationGroup="Grupo2"></asp:TextBox>
                             </td>
                             <td class="auto-style3">
-                <asp:RequiredFieldValidator ID="rfvContrasenia" runat="server" ControlToValidate="txtUserPwd" EnableClientScript="False" ValidationGroup="Grupo2">Ingrese una contraseña</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvContrasenia" runat="server" ControlToValidate="txtUserPwd" EnableClientScript="False" ValidationGroup="Grupo2" ErrorMessage="Ingrese una contraseña">*</asp:RequiredFieldValidator>
                             </td>
                         </tr>
                         <tr>
@@ -127,9 +127,9 @@
                     <asp:TextBox ID="txtUserPwdRe" runat="server" Type="password" ValidationGroup="Grupo2" CssClass="auto-style10"></asp:TextBox>
                             </td>
                             <td>
-                                <asp:CompareValidator ID="cvPassword" runat="server" ControlToCompare="txtUserPwd" ControlToValidate="txtUserPwdRe" ErrorMessage="CompareValidator">Ambas contraseñas deben ser iguales</asp:CompareValidator>
+                                <asp:CompareValidator ID="cvPassword" runat="server" ControlToCompare="txtUserPwd" ControlToValidate="txtUserPwdRe" ErrorMessage="Ambas contraseñas deben ser iguales" ValidationGroup="Grupo2" Display="Dynamic" EnableClientScript="False">*</asp:CompareValidator>
+                <asp:RequiredFieldValidator ID="rfvReContrasenia" runat="server" ControlToValidate="txtUserPwdRe" EnableClientScript="False" ValidationGroup="Grupo2" ErrorMessage="Repita la contraseña" Display="Dynamic">*</asp:RequiredFieldValidator>
                                 <br />
-                <asp:RequiredFieldValidator ID="rfvReContrasenia" runat="server" ControlToValidate="txtUserPwdRe" EnableClientScript="False" ValidationGroup="Grupo2">Repita la contraseña</asp:RequiredFieldValidator>
                             </td>
                         </tr>
                         <tr>
@@ -140,7 +140,7 @@
                     <asp:TextBox ID="txtUserEmail" runat="server" ValidationGroup="Grupo2"></asp:TextBox>
                             </td>
                             <td>
-                <asp:RequiredFieldValidator ID="rfvCorreo" runat="server" ControlToValidate="txtUserEmail" EnableClientScript="False" ValidationGroup="Grupo2">Ingrese correo electrónico</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvCorreo" runat="server" ControlToValidate="txtUserEmail" EnableClientScript="False" ValidationGroup="Grupo2" ErrorMessage="Ingrese correo electrónico">*</asp:RequiredFieldValidator>
                             </td>
                         </tr>
                         <tr>
@@ -150,7 +150,7 @@
                             <td class="auto-style12">
                     <asp:TextBox ID="txtUserCp" runat="server" OnTextChanged="txtUserCp_TextChanged" ValidationGroup="Grupo2" MaxLength="4"></asp:TextBox>
                             </td>
-                            <td class="auto-style13"><asp:CompareValidator ID="cvCP" runat="server" ControlToValidate="txtUserCp" Operator="GreaterThan" Type="Integer" ValueToCompare="0">Ingrese un CP valido</asp:CompareValidator>
+                            <td class="auto-style13"><asp:CompareValidator ID="cvCP" runat="server" ControlToValidate="txtUserCp" Operator="GreaterThan" Type="Integer" ValueToCompare="0" ErrorMessage="Ingrese un CP valido" ValidationGroup="Grupo2">*</asp:CompareValidator>
                             </td>
                         </tr>
                         <tr>
@@ -163,22 +163,22 @@
                 </asp:DropDownList>
                             </td>
                             <td class="auto-style13">
-                <asp:RequiredFieldValidator ID="rfvLocalidades" runat="server" ControlToValidate="ddlUserCity" EnableClientScript="False" InitialValue="--Localidad--" ValidationGroup="Grupo2">Selecciona una localidad</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvLocalidades" runat="server" ControlToValidate="ddlUserCity" EnableClientScript="False" InitialValue="--Localidad--" ValidationGroup="Grupo2" ErrorMessage="Selecciona una localidad">*</asp:RequiredFieldValidator>
                             </td>
                         </tr>
                     </table>
                 </div>
             </div>
             <div class="main-form-redirect">
+                <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Grupo2" />
                 <br />
-                    <asp:Button ID="btnUserSend" runat="server" Text="Guardar Usuario" style="margin-bottom: 0px" ValidationGroup="Grupo2" Width="128px" />
+                    <asp:Button ID="btnUserSend" runat="server" Text="Guardar Usuario" style="margin-bottom: 0px" ValidationGroup="Grupo2" Width="128px" OnClick="btnUserSend_Click" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <br />
                 <br />
                 <asp:Button ID="btnRedirect" runat="server" Text="Ir a Inicio.aspx" ValidationGroup="Grupo3" OnClick="btnRedirect_Click" />
                 <br />
                 <br />
-                <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Grupo1" />
                 <br />
             </div>
         </div>

@@ -26,7 +26,7 @@ namespace TP3_GRUPO_2
                 }
                 else {
                     cvLocalidad.Text = "Localidad repetida";
-                        }
+                }
             }
             else ValCityName.Text = "";
         }
@@ -39,6 +39,11 @@ namespace TP3_GRUPO_2
         protected void btnRedirect_Click(object sender, EventArgs e)
         {
             Response.Redirect("inicio.aspx");
+        }
+
+        protected void btnUserSend_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
