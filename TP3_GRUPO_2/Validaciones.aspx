@@ -5,6 +5,55 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            height: 61px;
+        }
+        .auto-style2 {
+            width: 100%;
+            height: 363px;
+            margin-top: 0px;
+        }
+        .auto-style3 {
+            height: 66px;
+        }
+        .auto-style4 {
+            height: 61px;
+            width: 235px;
+        }
+        .auto-style5 {
+            height: 66px;
+            width: 235px;
+        }
+        .auto-style6 {
+            width: 235px;
+        }
+        .auto-style7 {
+            height: 61px;
+            width: 265px;
+        }
+        .auto-style8 {
+            height: 66px;
+            width: 265px;
+        }
+        .auto-style9 {
+            width: 265px;
+        }
+        .auto-style10 {
+            margin-bottom: 1px;
+        }
+        .auto-style11 {
+            width: 235px;
+            height: 59px;
+        }
+        .auto-style12 {
+            width: 265px;
+            height: 59px;
+        }
+        .auto-style13 {
+            height: 59px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -41,70 +90,87 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
                 <div class="main-form-user__password">
+                    <br />
+                    <br />
+                    <asp:Label ID="lblUserTitle" runat="server" Text="Usuarios" Font-Bold="True" Font-Size="18pt"></asp:Label>
+                    <br />
                 </div>
                 <div class="main-form-user__city">
-                </div>
-                <div class="main-form-use__send">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:Label ID="lblUserTitle" runat="server" Text="Usuarios" Font-Bold="True" Font-Size="18pt"></asp:Label>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <table class="auto-style2">
+                        <tr>
+                            <td class="auto-style4">
+                    <asp:Label ID="lblUsername" runat="server" Text="Nombre usuario:"></asp:Label>
+                            </td>
+                            <td class="auto-style7">
+                    <asp:TextBox ID="txtUsername" runat="server" ValidationGroup="Grupo2"></asp:TextBox>
+                            </td>
+                            <td class="auto-style1">
+                <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtUsername" EnableClientScript="False" ValidationGroup="Grupo2">Ingrese un nombre de usuario</asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style5">
+                    <asp:Label ID="lblUserPwd" runat="server" Text="Contraseña:"></asp:Label>
+                            </td>
+                            <td class="auto-style8">
+                    <asp:TextBox ID="txtUserPwd" runat="server" Type="password" ValidationGroup="Grupo2"></asp:TextBox>
+                            </td>
+                            <td class="auto-style3">
+                <asp:RequiredFieldValidator ID="rfvContrasenia" runat="server" ControlToValidate="txtUserPwd" EnableClientScript="False" ValidationGroup="Grupo2">Ingrese una contraseña</asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style6">
+                    <asp:Label ID="lblUserPwdRe" runat="server" Text="Repetir contraseña:"></asp:Label>
+                            </td>
+                            <td class="auto-style9">
+                    <asp:TextBox ID="txtUserPwdRe" runat="server" Type="password" ValidationGroup="Grupo2" CssClass="auto-style10"></asp:TextBox>
+                            </td>
+                            <td>
+                                <asp:CompareValidator ID="cvPassword" runat="server" ControlToCompare="txtUserPwd" ControlToValidate="txtUserPwdRe" ErrorMessage="CompareValidator">Ambas contraseñas deben ser iguales</asp:CompareValidator>
+                                <br />
+                <asp:RequiredFieldValidator ID="rfvReContrasenia" runat="server" ControlToValidate="txtUserPwdRe" EnableClientScript="False" ValidationGroup="Grupo2">Repita la contraseña</asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style6">
+                    <asp:Label ID="lblUserEmail" runat="server" Text="Correo electronico:"></asp:Label>
+                            </td>
+                            <td class="auto-style9">
+                    <asp:TextBox ID="txtUserEmail" runat="server" ValidationGroup="Grupo2"></asp:TextBox>
+                            </td>
+                            <td>
+                <asp:RequiredFieldValidator ID="rfvCorreo" runat="server" ControlToValidate="txtUserEmail" EnableClientScript="False" ValidationGroup="Grupo2">Ingrese correo electrónico</asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style11">
+                    <asp:Label ID="lblUserCp" runat="server" Text="CP:"></asp:Label>
+                            </td>
+                            <td class="auto-style12">
+                    <asp:TextBox ID="txtUserCp" runat="server" OnTextChanged="txtUserCp_TextChanged" ValidationGroup="Grupo2" MaxLength="4"></asp:TextBox>
+                            </td>
+                            <td class="auto-style13"><asp:CompareValidator ID="cvCP" runat="server" ControlToValidate="txtUserCp" Operator="GreaterThan" Type="Integer" ValueToCompare="0">Ingrese un CP valido</asp:CompareValidator>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style11">
+                    <asp:Label ID="lblUserCity" runat="server" Text="Localidades:"></asp:Label>
+                            </td>
+                            <td class="auto-style12">
+                    <asp:DropDownList ID="ddlUserCity" runat="server" ValidationGroup="Grupo2" Width="116px">
+                        <asp:ListItem>--Localidad--</asp:ListItem>
+                </asp:DropDownList>
+                            </td>
+                            <td class="auto-style13">
+                <asp:RequiredFieldValidator ID="rfvLocalidades" runat="server" ControlToValidate="ddlUserCity" EnableClientScript="False" InitialValue="--Localidad--" ValidationGroup="Grupo2">Selecciona una localidad</asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
             <div class="main-form-redirect">
                 <br />
-                <br />
-                    <asp:Label ID="lblUsername" runat="server" Text="Nombre usuario:"></asp:Label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:TextBox ID="txtUsername" runat="server" ValidationGroup="Grupo2"></asp:TextBox>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtUsername" EnableClientScript="False" ValidationGroup="Grupo2">Ingrese un nombre de usuario</asp:RequiredFieldValidator>
-                <br />
-                <br />
-                    <asp:Label ID="lblUserPwd" runat="server" Text="Contraseña:"></asp:Label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:TextBox ID="txtUserPwd" runat="server" Type="password" ValidationGroup="Grupo2"></asp:TextBox>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:RequiredFieldValidator ID="rfvContrasenia" runat="server" ControlToValidate="txtUserPwd" EnableClientScript="False" ValidationGroup="Grupo2">Ingrese una contraseña</asp:RequiredFieldValidator>
-                <br />
-                <br />
-                    <asp:Label ID="lblUserPwdRe" runat="server" Text="Repetir contraseña:"></asp:Label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:TextBox ID="txtUserPwdRe" runat="server" Type="password" ValidationGroup="Grupo2"></asp:TextBox>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:RequiredFieldValidator ID="rfvReContrasenia" runat="server" ControlToValidate="txtUserPwdRe" EnableClientScript="False" ValidationGroup="Grupo2">Repita la contraseña</asp:RequiredFieldValidator>
-                <br />
-                <br />
-                    <asp:Label ID="lblUserEmail" runat="server" Text="Correo electronico:"></asp:Label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:TextBox ID="txtUserEmail" runat="server" ValidationGroup="Grupo2"></asp:TextBox>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:RequiredFieldValidator ID="rfvCorreo" runat="server" ControlToValidate="txtUserEmail" EnableClientScript="False" ValidationGroup="Grupo2">Ingrese correo electrónico</asp:RequiredFieldValidator>
-&nbsp;&nbsp;&nbsp;&nbsp;
-                <br />
-                <br />
-                    <asp:Label ID="lblUserCp" runat="server" Text="CP:"></asp:Label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:TextBox ID="txtUserCp" runat="server" OnTextChanged="txtUserCp_TextChanged" ValidationGroup="Grupo2" MaxLength="4"></asp:TextBox>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;<asp:CompareValidator ID="cvCP" runat="server" ControlToValidate="txtUserCp" Operator="GreaterThan" Type="Integer" ValueToCompare="0">Ingrese un CP valido</asp:CompareValidator>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;
-                <br />
-                <br />
-                    <asp:Label ID="lblUserCity" runat="server" Text="Localidades:"></asp:Label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:DropDownList ID="ddlUserCity" runat="server" ValidationGroup="Grupo2" Width="116px">
-                        <asp:ListItem>--Localidad--</asp:ListItem>
-                </asp:DropDownList>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:RequiredFieldValidator ID="rfvLocalidades" runat="server" ControlToValidate="ddlUserCity" EnableClientScript="False" InitialValue="--Localidad--" ValidationGroup="Grupo2">Selecciona una localidad</asp:RequiredFieldValidator>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <br />
-                <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="btnUserSend" runat="server" Text="Guardar Usuario" style="margin-bottom: 0px" ValidationGroup="Grupo2" Width="128px" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <br />

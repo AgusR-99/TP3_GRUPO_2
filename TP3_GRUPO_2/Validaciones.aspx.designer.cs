@@ -159,6 +159,15 @@ namespace TP3_GRUPO_2
         protected global::System.Web.UI.WebControls.TextBox txtUserPwdRe;
 
         /// <summary>
+        /// Control cvPassword.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvPassword;
+
+        /// <summary>
         /// Control rfvReContrasenia.
         /// </summary>
         /// <remarks>
