@@ -53,6 +53,17 @@
         .auto-style13 {
             height: 59px;
         }
+        .auto-style14 {
+            width: 235px;
+            height: 53px;
+        }
+        .auto-style15 {
+            width: 267px;
+            height: 53px;
+        }
+        .auto-style16 {
+            height: 53px;
+        }
     </style>
 </head>
 <body>
@@ -74,10 +85,10 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:RequiredFieldValidator ID="ValCityName" runat="server" ControlToValidate="txtCityName" EnableClientScript="False" Text="*" ErrorMessage="Ingrese una localidad" ValidationGroup="Grupo1"></asp:RequiredFieldValidator>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:CompareValidator ID="cvLocalidad" runat="server" ControlToCompare="ddlUserCity" ControlToValidate="txtCityName" EnableClientScript="False" ValidationGroup="Grupo1"></asp:CompareValidator>
                     <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:CompareValidator ID="cvLocalidad" runat="server" ControlToCompare="ddlUserCity" ControlToValidate="txtCityName" EnableClientScript="False" ValidationGroup="Grupo1"></asp:CompareValidator>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
             </div>
             <div class="main-form-user">
@@ -128,6 +139,7 @@
                             </td>
                             <td>
                                 <asp:CompareValidator ID="cvPassword" runat="server" ControlToCompare="txtUserPwd" ControlToValidate="txtUserPwdRe" ErrorMessage="Ambas contraseñas deben ser iguales" ValidationGroup="Grupo2" Display="Dynamic" EnableClientScript="False">*</asp:CompareValidator>
+                                <br />
                 <asp:RequiredFieldValidator ID="rfvReContrasenia" runat="server" ControlToValidate="txtUserPwdRe" EnableClientScript="False" ValidationGroup="Grupo2" ErrorMessage="Repita la contraseña" Display="Dynamic">*</asp:RequiredFieldValidator>
                                 <br />
                             </td>
@@ -144,13 +156,16 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style11">
+                            <td class="auto-style14">
                     <asp:Label ID="lblUserCp" runat="server" Text="CP:"></asp:Label>
                             </td>
-                            <td class="auto-style12">
-                    <asp:TextBox ID="txtUserCp" runat="server" OnTextChanged="txtUserCp_TextChanged" ValidationGroup="Grupo2" MaxLength="4"></asp:TextBox>
+                            <td class="auto-style15">
+                                <asp:TextBox ID="txtUserCP" runat="server" ValidationGroup="Grupo2" MaxLength="4"></asp:TextBox>
                             </td>
-                            <td class="auto-style13"><asp:CompareValidator ID="cvCP" runat="server" ControlToValidate="txtUserCp" Operator="GreaterThan" Type="Integer" ValueToCompare="0" ErrorMessage="Ingrese un CP valido" ValidationGroup="Grupo2">*</asp:CompareValidator>
+                            <td class="auto-style1">
+                                <asp:RegularExpressionValidator ID="revCP" runat="server" ControlToValidate="txtUserCP" ErrorMessage="Solo puede ingresar numeros para CP" ValidationExpression="^\d+$" ValidationGroup="Grupo2" EnableClientScript="False">*</asp:RegularExpressionValidator>
+                                <br />
+                                <asp:RequiredFieldValidator ID="rfvCP" runat="server" ControlToValidate="txtUserCP" ErrorMessage="Ingrese CP" ValidationGroup="Grupo2" EnableClientScript="False">*</asp:RequiredFieldValidator>
                             </td>
                         </tr>
                         <tr>
@@ -170,7 +185,7 @@
                 </div>
             </div>
             <div class="main-form-redirect">
-                <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Grupo2" />
+                <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Grupo2" ShowMessageBox="True" />
                 <br />
                     <asp:Button ID="btnUserSend" runat="server" Text="Guardar Usuario" style="margin-bottom: 0px" ValidationGroup="Grupo2" Width="128px" OnClick="btnUserSend_Click" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

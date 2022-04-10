@@ -213,22 +213,31 @@ namespace TP3_GRUPO_2
         protected global::System.Web.UI.WebControls.Label lblUserCp;
 
         /// <summary>
-        /// Control txtUserCp.
+        /// Control txtUserCP.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtUserCp;
+        protected global::System.Web.UI.WebControls.TextBox txtUserCP;
 
         /// <summary>
-        /// Control cvCP.
+        /// Control revCP.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator cvCP;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revCP;
+
+        /// <summary>
+        /// Control rfvCP.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCP;
 
         /// <summary>
         /// Control lblUserCity.
