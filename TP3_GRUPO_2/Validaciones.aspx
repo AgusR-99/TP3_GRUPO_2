@@ -61,10 +61,7 @@
             width: 267px;
             height: 53px;
         }
-        .auto-style16 {
-            height: 53px;
-        }
-    </style>
+        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -103,7 +100,9 @@
                 <div class="main-form-user__password">
                     <br />
                     <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Label ID="lblUserTitle" runat="server" Text="Usuarios" Font-Bold="True" Font-Size="18pt"></asp:Label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <br />
                 </div>
                 <div class="main-form-user__city">
@@ -166,6 +165,8 @@
                                 <asp:RegularExpressionValidator ID="revCP" runat="server" ControlToValidate="txtUserCP" ErrorMessage="Solo puede ingresar numeros para CP" ValidationExpression="^\d+$" ValidationGroup="Grupo2" EnableClientScript="False">*</asp:RegularExpressionValidator>
                                 <br />
                                 <asp:RequiredFieldValidator ID="rfvCP" runat="server" ControlToValidate="txtUserCP" ErrorMessage="Ingrese CP" ValidationGroup="Grupo2" EnableClientScript="False">*</asp:RequiredFieldValidator>
+                                <br />
+                                <asp:CustomValidator ID="cvCP" runat="server" ControlToValidate="txtUserCP" ErrorMessage="Ingrese CP de 4 digitos" OnServerValidate="cvCP_ServerValidate" ValidationGroup="Grupo2">*</asp:CustomValidator>
                             </td>
                         </tr>
                         <tr>
@@ -185,13 +186,25 @@
                 </div>
             </div>
             <div class="main-form-redirect">
-                <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Grupo2" ShowMessageBox="True" />
                 <br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Button ID="btnUserSend" runat="server" Text="Guardar Usuario" style="margin-bottom: 0px" ValidationGroup="Grupo2" Width="128px" OnClick="btnUserSend_Click" />
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="lblBienvenida" runat="server"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <br />
                 <br />
                 <br />
                 <asp:Button ID="btnRedirect" runat="server" Text="Ir a Inicio.aspx" ValidationGroup="Grupo3" OnClick="btnRedirect_Click" />
+                <br />
+                <br />
+                <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Grupo2" ShowMessageBox="True" />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
                 <br />
                 <br />
                 <br />

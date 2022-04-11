@@ -43,7 +43,33 @@ namespace TP3_GRUPO_2
 
         protected void btnUserSend_Click(object sender, EventArgs e)
         {
-
+            if (rfvNombre.IsValid)
+                if (rfvContrasenia.IsValid)
+                    if (cvPassword.IsValid)
+                        if (rfvReContrasenia.IsValid)
+                            if (rfvCorreo.IsValid)
+                                if (revCP.IsValid)
+                                    if (rfvCP.IsValid)
+                                        if(cvCP.IsValid)
+                                        if (rfvLocalidades.IsValid)
+                                            lblBienvenida.Text = "Bienvenido Usuario " + txtUsername.Text;
         }
+
+        protected void cvCP_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            if (args.Value.Length > 3)
+            {
+                args.IsValid = true;
+            }
+            else
+            {
+                args.IsValid = false;
+            }
+        }
+
+        //  protected System.Void btnUserSend_Click(System.Object sender, System.EventArgs e)
+        // {
+
+        //        }
     }
 }
