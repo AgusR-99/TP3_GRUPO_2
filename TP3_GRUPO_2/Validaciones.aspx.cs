@@ -43,11 +43,12 @@ namespace TP3_GRUPO_2
 
         protected void btnUserSend_Click(object sender, EventArgs e)
         {
+            Page.Validate();
             if (rfvNombre.IsValid)
                 if (rfvContrasenia.IsValid)
                     if (cvPassword.IsValid)
                         if (rfvReContrasenia.IsValid)
-                            if (rfvCorreo.IsValid)
+                            if (revCorreo.IsValid)
                                 if (revCP.IsValid)
                                     if (rfvCP.IsValid)
                                         if(cvCP.IsValid)

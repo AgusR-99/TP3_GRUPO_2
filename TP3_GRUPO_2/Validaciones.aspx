@@ -151,7 +151,7 @@
                     <asp:TextBox ID="txtUserEmail" runat="server" ValidationGroup="Grupo2"></asp:TextBox>
                             </td>
                             <td>
-                <asp:RequiredFieldValidator ID="rfvCorreo" runat="server" ControlToValidate="txtUserEmail" EnableClientScript="False" ValidationGroup="Grupo2" ErrorMessage="Ingrese correo electrónico">*</asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="revCorreo" runat="server" ControlToValidate="txtUserEmail" ErrorMessage="Ingrese una direccion de correo valida" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*">*</asp:RegularExpressionValidator>
                             </td>
                         </tr>
                         <tr>
@@ -198,8 +198,8 @@
                 <asp:Button ID="btnRedirect" runat="server" Text="Ir a Inicio.aspx" ValidationGroup="Grupo3" OnClick="btnRedirect_Click" />
                 <br />
                 <br />
-                <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="Grupo2" ShowMessageBox="True" />
                 <br />
+                <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
                 <br />
                 <br />
                 <br />
